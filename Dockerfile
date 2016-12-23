@@ -54,7 +54,8 @@ RUN conda install --quiet --yes \
     && conda clean -tipsy
 
 # Download all NLTK data
-RUN python -m nltk.downloader all
+RUN python -m nltk.downloader -q all && \
+    find ~/nltk_data -name '*.zip' | xargs rm
 
 USER root
 
