@@ -51,6 +51,7 @@ RUN conda install --quiet --yes \
     matplotlib \
     seaborn \
     nltk \
+    pandas \
     && conda clean -tipsy
 
 # Download all NLTK data
