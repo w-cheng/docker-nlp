@@ -58,6 +58,11 @@ RUN conda install --quiet --yes \
 RUN python -m nltk.downloader -q all && \
     find ~/nltk_data -name '*.zip' | xargs rm
 
+# Above is the core and any other additional packages add here
+RUN conda install --quiet --yes \
+	mpld3 \
+	&& conda clean -tipsy
+
 USER root
 
 EXPOSE 8888
